@@ -16,199 +16,34 @@ rails s --port 3000
 
 
 [Git]
-git init
+git init && g a . && gitk
 g a .
 
 
 git log --grep=master -6
 
 [Set up 2012052]----------------------------
-rails new NewsReader
-
-cd NewsReader
-
-copy C:\WORKS\WORKSPACES_APTANA\ChineseReader\.project .
-
-### EDIT .project#name	###
-
-### IMPORT TO APTANA	###
-
-copy C:\WORKS\WORKSPACES_APTANA\ChineseReader\win_command_history.txt .
-
-copy C:\WORKS\WORKSPACES_APTANA\ChineseReader\Gemfile .
-
-bundle install
+#bundle install
+bundle update rails
 
 rails s --port 3001
 
-[Git ]
-### CREATE REPO AT GitHub	###
-
-git init
-
-git add .
-
-git commit -a
-
-git remote add origin git@github.com:iwabuchiken/NewsReader3.git
-
-g p origin master
-
-### BROWSE GitHub	###
-
-[heroku ]
-gem install heroku --no-ri --no-rdoc
-
-# Successfully installed excon-0.14.3
-# Successfully installed heroku-api-0.2.7
-# Successfully installed heroku-2.28.10
-# 3 gems installed
-
-heroku keys:add
-
-heroku create --stack cedar
-
-heroku rename cosmos-news-reader-3
-
-g p heroku master
-
-/git remote rm heroku
-/gem uninstall heroku (2.28.10)
-
-/git remote add heroku git@heroku.com:cosmos-english-reader.git
-
-heroku open
-
-[/Set up ]----------------------------
-
-[Model: Article: 20120710_172354]-------------------------------
-# rails generate scaffold Article line:text url:string src:string news_time:string genre:string cat:string subcat:string tag:string memo:text
-
-# bundle exec rake db:migrate
-
-heroku run rake db:migrate
-
-
-bundle update
-
-
-[Model: Genre 20120711_002405]-------------------------------
-rails generate scaffold Genre name:string
-
-bundle exec rake db:migrate
-
-*push
-
-heroku run rake db:migrate
-
-[B11_categories-kws-from-DB_V2: 2013/05/11 09:16:04]---------------
-#bundle exec rake db:migrate
-#g p origin master
-
-gem install heroku --no-ri --no-rdoc
-
-	Fetching: heroku-2.39.2.gem (100%)
-	 !    The `heroku` gem has been deprecated and replaced with the Heroku Toolbelt
-	.
-	 !    Download and install from: https://toolbelt.heroku.com
-	 !    For API access, see: https://github.com/heroku/heroku.rb
-	Successfully installed heroku-2.39.2
-	1 gem installed
+#gem install heroku --no-ri --no-rdoc
 
 #heroku keys:add
 
-	Found existing public key: C:/Users/IwabuchiKen/.ssh/id_rsa.pub
-	Uploading SSH public key C:/Users/IwabuchiKen/.ssh/id_rsa.pub... done
+		Found existing public key: C:/Users/IwabuchiKen/.ssh/id_rsa.pub
+		Uploading SSH public key C:/Users/IwabuchiKen/.ssh/id_rsa.pub... done
 
-#heroku create --stack cedar
-
-	Creating lit-coast-7114... done, region is us
-	http://lit-coast-7114.herokuapp.com/ | git@heroku.com:lit-coast-7114.git
-	Git remote heroku added
-
-#heroku rename cosmos-nr4
-
-	Renaming lit-coast-7114 to cosmos-nr4... done
-	http://cosmos-nr4.herokuapp.com/ | git@heroku.com:cosmos-nr4.git
-	Git remote heroku updated
-
-#g p heroku master
-
-#heroku open
-
-	"We're sorry, but something went wrong."
-
-#heroku logs
-
-	2013-05-11T10:36:46.268116+00:00 app[web.1]: LINE 4:              WHERE a.attrel
-	id = '"genres"'::regclass
-	2013-05-11T10:36:46.268116+00:00 app[web.1]: ActiveRecord::StatementInvalid (PGE
-	rror: ERROR:  relation "genres" does not exist
-	2013-05-11T10:36:46.268116+00:00 app[web.1]:
-
-heroku run rake db:migrate
-
-[B11_categories-kws-from-DB_V2: v-1.1: 2013/05/11 09:16:04]---------------
-#heroku logs
-	2013-05-11T10:44:25.309540+00:00 app[web.1]: NoMethodError (undefined method `pu
-	sh' for nil:NilClass):
-	2013-05-11T10:44:25.308495+00:00 app[web.1]: Completed 500 Internal Server Error
-	 in 2933ms
-	2013-05-11T10:44:25.309540+00:00 app[web.1]:   app/controllers/articles_controll
-	er.rb:1247:in `each'
-
-g p origin master && g p heroku master 
+heroku create --stack cedar
 
 
-[Add column: genre_id to Keyword 2013/05/30 19:00:45]-------------------------------
-#rails generate migration AddColumnGenreIdToKeyword
+heroku rename ga-2
 
-#bundle exec rake db:migrate
+g p heroku master
 
-g p origin master && g p heroku master && heroku run rake db:migrate
 g p origin master && g p heroku master
 
-
-bundle exec rake db:migrate
-
-heroku run rake db:migrate
-
-
-aa
-==================== STORAGE ===================================
-[Add column: Article 20120711_065652]-------------------------------
-# rails generate migration AddColumnCodesToArticle
-# 
-# bundle exec rake db:migrate
-# 
-# bundle exec rake db:rollback
-# 
-# rails destroy migration AddColumnCodesToArticle
-# 
-# rails generate migration AddColumnCodesToGenre
-
-# *push
-
-# heroku run rake db:migrate
-
-[20120711_080643]-------------------------------------
-# git remote rm heroku
-# gem uninstall heroku
-
-# gem install heroku --no-ri --no-rdoc
-# heroku keys:add
-# heroku create --stack cedar
-# heroku rename cosmos-news-reader-3
-# g p heroku master
-# heroku run rake db:migrate
-
-[20120825_223801]-------------------------------------
-rails generate scaffold Category name:string genre_id:integer
-bundle exec rake db:migrate
-
-rails generate scaffold Keyword name:string category_id:integer
-bundle exec rake db:migrate
-
-heroku run rake db:migrate
+heroku open
 
 ============EOF============

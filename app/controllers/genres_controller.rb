@@ -5,7 +5,7 @@ class GenresController < ApplicationController
   # GET /genres
   # GET /genres.json
   def index
-    @genres = Genre.all
+    #@genres = Genre.all
 
     target = "doc/mylog/log.log"
     # target = "log.log"
