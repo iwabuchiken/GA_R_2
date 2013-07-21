@@ -1,0 +1,34 @@
+<h1>Categories</h1>
+
+<table>
+  <tr>
+  	<th>Id</th>
+    <th>Name</th>
+    <th>Genre</th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+  	<td><%= category.id %></td>
+    <td><%= link_to category.name, category %></td>
+    <td>
+    	<% if category.genre != nil %>
+    	
+    		<%= category.genre.name %>
+    		
+    	<% else %>
+    	
+    		No data
+    	
+    	<% end %>
+			
+			
+	</td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_category_path %>
